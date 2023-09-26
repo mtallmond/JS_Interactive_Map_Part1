@@ -3,24 +3,14 @@
 //customize marker styles by business type
 
 function addMarkers() {
-    for (var i = 0; i < this.businesses.length; i++) {
+    for (var i = 0; i < this.business.length; i++) {
     this.markers = L.marker([
-        this.businesses[i].lat,
-        this.businesses[i].long,
+        this.business[i].lat,
+        this.business[i].long,
     ])
-        .bindPopup(`<p1>${this.businesses[i].name}</p1>`)
+        .bindPopup(`<p1>${this.business[i].name}</p1>`)
         .addTo(this.map)
     }}
-
-// let dd = document.querySelector("#businesses")
-// dd.addEventListener('change',function(e){
-// //what is value of this element
-// alert(e.target.value)
-// })
-
-// async function main(){
-//     let userCoord = await getCoords()
-// }
 
 async function getCoords(){
     const pos = await new Promise((resolve, reject) => {
@@ -102,3 +92,13 @@ window.onload = async () => {
     main()
 }
 
+
+// let dd = document.querySelector("#businesses")
+// dd.addEventListener('change',function(e){
+// //what is value of this element
+// alert(e.target.value)
+// })
+
+// async function main(){
+//     let userCoord = await getCoords()
+// }
